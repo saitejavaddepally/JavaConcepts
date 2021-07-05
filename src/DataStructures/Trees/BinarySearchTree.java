@@ -14,7 +14,7 @@ import java.util.Queue;
     }
 }
 
-public class LevelOrderTraversal{
+public class BinarySearchTree {
 
     Node insert(Node root, char data){
         if (root == null){
@@ -43,6 +43,44 @@ public class LevelOrderTraversal{
         }
     }
 
+//    Delete a node from binary search tree
+//    case 1 : no child
+//    case 2 : one child
+//    case 3 : two children
+//        ->> two cases
+//              find min in right
+//              find max in left
+
+    Node findMin(Node root){
+        while (root.left != null) root = root.left;
+        return root;
+    }
+
+    Node deleteNode(Node root, char data){
+        if (root == null) return null;
+        else if (data < root.data) root.left = deleteNode(root.left, data);
+        else if (data > root.data) root.right = deleteNode(root.right, data);
+        else{
+//            case 1:
+            if (root.left == null && root.right == null){
+                root = null;
+            }
+//            case 2:
+            else if(root.left == null){
+                root = root.right;
+            }
+            else if(root.right == null){
+                root = root.left;
+            }
+            else{
+                Node temp = findMin(root.right);
+                root.data = temp.data;
+                root.right = deleteNode(root.right, temp.data);
+            }
+        }
+        return root;
+    }
+
 //
 
     void preOrder(Node root){
@@ -68,7 +106,7 @@ public class LevelOrderTraversal{
 
     public static void main(String[] args) {
         Node root = null;
-        LevelOrderTraversal traversal = new LevelOrderTraversal();
+        BinarySearchTree traversal = new BinarySearchTree();
         root = traversal.insert(null, 'F');
         root = traversal.insert(root, 'B');
         root = traversal.insert(root, 'G');
@@ -82,6 +120,8 @@ public class LevelOrderTraversal{
         traversal.postOrder(root);
         System.out.println();
         traversal.levelOrder(root);
-
+        traversal.deleteNode(root,'B');
+        System.out.println();
+        traversal.preOrder(root);
     }
 }
