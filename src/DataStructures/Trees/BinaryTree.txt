@@ -1,0 +1,90 @@
+
+
+Binary Tree: 
+------------
+each node can have atmost 2 children
+
+Strict binary tree: 
+each node can have either 2 or 0 children
+
+complete binary tree: 
+
+all levels except possibly the last are completely
+filled and all nodes are as left as possible
+
+Max no. of nodes at level i = 2^i
+
+Perfect binary tree: 
+completely filled nodes from roots
+
+Maximum no. of nodes
+
+ level -1 : 2 ^ 0
+ level -2 : 2 ^ 1
+ level -3 : 2 ^ 2
+ level -4 : 2 ^ 3
+ level -5 : 2 ^ 4
+    |           |
+    |           |
+    |           |
+    |           |
+ level -h : 2 ^ h
+
+ so maximum no. of nodes is 2 ^ 0 + 2 ^ 1 + 2 ^ 2 + 2 ^ 3 -------2^h
+
+so sum of gp gives
+
+a(r^n -1 )
+-----------
+   (r-1)
+
+here n = h+1
+    a = 1
+    r = 2
+
+==>  2^(h+1) -1 ==> 2^(no. of levels) -1
+
+h = log(base 2)(n + 1) - 1;
+
+Height --> No. of edges in longest path 
+from root to a leaf
+
+Height of an empty tree = -1
+Height of a tree with one node = 0
+
+Balanced binary tree : 
+difference between height of left and right 
+subtree for every node is not more than k (mostly 1)
+
+diff = | h (left) - h (right) |
+
+we can implement binary tree using: 
+
+dynamically created nodes
+struct Node{
+    int data ; 
+    Node* left;
+    Node* right;
+}
+
+arrays
+
+for a complete binary tree
+
+for node at index i , 
+    left-child-index = 2i+1
+    right-child-index = 2i+2
+
+
+Binary search tree: 
+
+It is a special kind of binary tree
+
+A binary tree in which for each node, value of all the nodes in 
+left subtree is lesser and value of all the right subtree is greater
+
+n => n/2 => n/4 => n/8 ---------------------- n/2^k 
+
+n/2^k = 1 => 2^k = n ==> k = log(base 2) (n)
+
+O(log(base 2)n)

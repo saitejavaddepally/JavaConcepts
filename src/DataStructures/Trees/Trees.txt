@@ -1,0 +1,30 @@
+
+Tree: 
+
+A collection of entities called nodes
+linked together to simulate hierarchy
+
+The top most node is called root of the Tree
+Any node that doesnot have a child are called leaf nodes
+
+Tree can be called recursive data structure
+A tree with n nodes have n-1 edges
+
+Depth of x = length of path from root to x
+Height of x = No. of edges in longest path from x to a leaf
+so, height of leaf nodes will be zero
+
+Height of tree Height of root node
+
+Binary tree : A tree in which each node can have 
+at most 2 children.
+
+Applications of trees:
+----------------------
+
+hierarchical data => ex : file system
+organize data => for quick search, insertion, deletion => ex : binary search trees
+Trie : dictionary
+Network routing algorithm
+
+ 

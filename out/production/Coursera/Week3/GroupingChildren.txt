@@ -1,0 +1,33 @@
+
+// Problem statement
+
+Many children came to a celebration.
+Organise them into the minimum possible number of groups such that
+the age of any two children in the same group differ by at most one year.
+
+
+
+
+        minGroups(C){
+            m = len(c)
+            for each partition into groups
+            c = g1 U g2 U g3 U g4...U gk
+            good = true;
+            for i from 1 to k:
+                if max(gi) - min(gi) > 1:
+                    good = false
+
+                if good:
+                    m = min(m,k)
+         return m;
+         }
+ Time complexity : 2^n
+
+
+// Efficient algorithm
+
+Covering point by segments
+
+Input : A set of n points x1, x2 ..... xn
+Output : The minimum number of segments of unit length needed to cover all the points.
+

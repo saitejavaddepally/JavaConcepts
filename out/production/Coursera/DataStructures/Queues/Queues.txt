@@ -1,0 +1,12 @@
+
+Queue : first in first out
+
+QueueADT : Queue is a list or collection with the 
+           restriction that insertion can be performed at one end (rear)
+           and deletion can be performed at other end (front)
+
+1. enqueue (rear)
+2. dequeue (front)
+3. front() or peek()
+4. IsEmpty()
+

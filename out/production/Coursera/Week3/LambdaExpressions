@@ -1,0 +1,214 @@
+
+
+Java Lambda Expressions
+
+its the first steps into functional programming
+it's an anonymous function that doesn't have a name and doesn't belong to any class
+It provides a clear and a concise way to represent a method interface via a expression.
+It provides the implementation of functional interface & simplifies the software development.
+
+syntax -> expression body
+
+Functional Interface
+---------------------
+
+Functional interface is the interface that contains exactly one abstract method
+It can have any number of default or static methods along with object class methods.
+Java provides predefined functional interfaces to deal with functional programming.
+Runnable, ActionListener, Comparable are some of the examples of functional interfaces.
+
+package Week3;
+
+
+@FunctionalInterface
+interface Cab{
+    void bookCab();
+}
+
+//  normal
+//  class UberX implements Cab{
+//
+//    @Override
+//    public void bookCab() {
+//        System.out.println("booked");
+//    }
+//}
+
+public class LambdaApp {
+    public static void main(String[] args) {
+//        Cab cab = new UberX();
+
+
+//        anonymous
+//        Cab cab = new Cab() {
+//            @Override
+//            public void bookCab() {
+//                System.out.println("booked");
+//            }
+//        };
+
+//        Lambda
+        Cab cab = ()->{
+            System.out.println("hello");
+        };
+        cab.bookCab();
+    }
+}
+
+Lambda expressions can take parameters just like methods.
+
+1. Zero parameters -->  ()-> System.out.println("zero parameters");
+2. One Parameter --> (param) -> System.out.println("zero parameters" + param);
+3. Three Parameters --> (param1, param2) -> System.out.println("zero parameters" + param1, param2);
+
+With Parameters
+@FunctionalInterface
+interface Cab{
+    void bookCab(String source, String destination);
+}
+
+//  normal
+//  class UberX implements Cab{
+//
+//    @Override
+//    public void bookCab() {
+//        System.out.println("booked");
+//    }
+//}
+
+public class LambdaApp {
+    public static void main(String[] args) {
+//        Cab cab = new UberX();
+
+
+//        anonymous
+//        Cab cab = new Cab() {
+//            @Override
+//            public void bookCab() {
+//                System.out.println("booked");
+//            }
+//        };
+
+//        Lambda
+        Cab cab = (source,destination)->{
+            System.out.println("uber from " + source + " " + destination );
+        };
+        cab.bookCab("malkapur", "hyderabad");
+    }
+}
+
+
+It works with return types
+
+@FunctionalInterface
+interface Cab{
+//    void bookCab(String source, String destination);
+    double bookCab(String source, String destination);
+}
+
+//  normal
+//  class UberX implements Cab{
+//
+//    @Override
+//    public void bookCab() {
+//        System.out.println("booked");
+//    }
+//}
+
+public class LambdaApp {
+    public static void main(String[] args) {
+//        Cab cab = new UberX();
+
+
+//        anonymous
+//        Cab cab = new Cab() {
+//            @Override
+//            public void bookCab() {
+//                System.out.println("booked");
+//            }
+//        };
+
+//        Lambda
+        Cab cab = (source,destination)->{
+            System.out.println("uber from " + source + " " + destination );
+            return 850.12;
+        };
+       double price =  cab.bookCab("malkapur", "hyderabad");
+        System.out.println(price);
+    }
+}
+
+
+Lambda is an object
+-------------------
+
+interface LambdaComparator{
+    public boolean compare(int a1, int a2);
+    }
+
+// logic
+LambdaComparator myComparator = (a1, a2) -> return a1 > a2;
+
+boolean result = myComparator.compare(2,5)
+
+java lambda expressions can access variables that are declared outside the lambda
+function body under certain circumstances.
+
+
+Method references as lambdas
+------------------------------
+
+ We can have reference to a :
+ 1. static method
+ 2. parameter method
+ 3. Instance method
+ 4. Constructor method
+
+
+
+@FunctionalInterface
+interface Calculator{
+    void add(int num1, int num2);
+
+
+}
+
+class CalC{
+    public static  void addSomething(int num1, int num2){
+        System.out.println(num1 + num2);
+    }
+    public void letsAdd(int num1, int num2){
+        System.out.println(num1 + num2);
+    }
+}
+
+interface Messenger{
+    Message getMessage(String msg);
+}
+
+class Message{
+    Message(String message){
+        System.out.println("message" + message);
+    }
+}
+
+public class MethodInterfaces {
+    public static void main(String[] args) {
+//        CalC.addSomething(10,20);
+
+////        Referencing to a static method.
+//        Calculator cRef = CalC::addSomething;
+//        cRef.add(12,33);
+
+//        Referencing to a non-static method.
+//
+//        CalC calC = new CalC();
+//        Calculator calculator = calC::letsAdd;
+//        calculator.add(23,33);
+
+//        Reference to a constructor
+
+        Messenger mRef = Message::new;
+        mRef.getMessage("hello");
+    }
+}

@@ -1,0 +1,84 @@
+
+
+
+ Big O notation
+
+ log(n) < root(n) < n < n^2 < 2^n
+
+
+ DEFINITION:
+
+ f(n)  = O(g(n)) (f is Big-O of g) or f<=g if there exist constants
+ N and c so that for all n>=N, f(n) <= c.g(n)
+
+ f is bounded above by constant multiple of g
+
+ Using Big-O loses important information about constant multiples.
+ Big-O is only asymptotic
+
+ it doesn't care about the computer resources available. it only works for large inputs
+
+ Running time actually depends upon
+
+    1. Single vs multi processor machines
+    2. Read/ Write speed to memory
+    3. 32 vs 64 bit
+
+ But O- notation doesn't care about these, it only depends only upon the input.
+
+ for example:
+    f(n) = 5n^2 + 2n + 1;
+    g(n) = n^2
+
+    c = 5 + 2 + 1 => 8
+    c = 8
+
+    f(n) = 8n^2 (cn^2) => c (g(n))
+
+    but when n <=1 f(n) > cg(n)
+
+    Big-O(n) always gives the upper bound
+
+
+   OMEGA NOTATION:
+
+        omega(g(n)) = { f(n) : there exist constants c and N such that cg(n) <= f(n), for n> N
+
+        for example,
+            f(n)  = 5 n^2 + 2^n + 1 = omega(n^2)
+            where c = 5
+            g(n) = n^2
+
+            N = 0
+
+            5 n^2 <= f(n) where N > 0
+
+            Omega always gives the lower bound
+
+
+   THETA NOTATION:
+
+       Theta(g(n)) = f(n): there exist contacts such that c1, c2 and n0 such that c1(g(n)) <= f(n) <= c2(g(n)) for n>= n0
+
+       f(n) = 5n^2 + 2n + 1
+       g(n) = n^2
+       c1 = 5 , c2 = 8 , n0 = 1;
+
+       Theta notation always gives us Tight bound
+
+
+
+   To calculate Big-o
+
+   Rule - 1 : drop lower order items and constant multiplier
+
+   T(n) = 16n + log(n) = O(n)
+
+   Time complexity analysis:
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+
+
+
+    GREEDY METHOD :
+
+        This method is used for solving optimization problems
+
+        Optimization Problems : A problem which demands minimum result or maximum
+        result
+
+        P : A --> B
+
+        suppose we need to travel from A--> B in 12 hrs, we can't have a
+        journey by walk or by bicycle, we can reach only it in car.
+        It also gives us minimum cost.
+
+        A solution that depends upon a condition is known as feasible solution,
+        though there are many solutions.
+
+        There should be only one optimal solution.
+
+        There are three methods to solve optimization problems.
+
+        1. Greedy method
+        2. Dynamic Programming
+        3. Branch and Bound
+
+
+        Greedy method should be solved in stages.
+
+        Algorithm Greedy ( a, n ) {
+            for i = 1 to n {
+                x = select(a);
+
+                if feasible(x) then {
+                    solution += x;
+                }
+            }
+        }
+
+
+        General Strategy of Greedy Algorithm
+
+        problem -----Greedy choice----> Safe move
+         <------------sub problem<<--------------
+
+         1. Make a greedy choice.
+         2. Prove that it is a safe move.
+         3. Reduce to a sub problem
+         4. Solve the sub problem

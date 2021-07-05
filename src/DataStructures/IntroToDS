@@ -1,0 +1,44 @@
+
+
+               Introduction to DS
+
+A data structure is a way to store and organize data, in
+a computer so that it can be used efficiently.
+
+1. Mathematical or Logical Models
+
+Abstract Data Types:
+define data and operations, but no implementation.
+
+Arrays --> Concrete Implementation
+
+ 1. logical view
+ 2. operations
+ 3. cost of operation
+ 4. implementation
+
+
+
+List as abstract data type
+--------------------------
+
+List -->    store a given number of elements of a given data type
+            write or modify at a position
+            Read elements at position
+            empty if there are no elements in the list
+            insert
+            remove
+            count
+            read/modify
+            specify data-types to the list
+
+
+ For arrays -->
+
+1. Access --> Read/write element at an index --> constant time --> O(1)
+2. Insert --> Insert at end --> constant time --> O(1)
+          --> Insert at first --> T X n ==> O(n)
+          --> remove --> O(n)
+          --> Add --> O(n)
+
+ For Linked Lists -->

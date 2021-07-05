@@ -1,0 +1,49 @@
+
+Infix : <operand> <operator> <operand>
+(2+3), A+B, (p*2), (2+3)*4, (p+q)*(r+s)
+
+Binary operator : An operator that requires only two operands is known as binary operator
+
+    order of operation
+    paranthesis
+    Exponents            --> right to left  ex : 2^3^2 = 2^9
+    Multiplication and division  --> left to right
+    Addition and subtraction --> left to right
+
+    Prefix: <operator><operand><operand>        (polish notation)
+        Infix : 2+3         Prefix: +23
+        Infix : p-q         prefix: -pq
+        Infix: a+b*c        Prefix: +a*bc
+
+
+    Postfix:  <operand><operand><operator>
+
+    Infix : 2+3         Prefix: +23                 Postfix: 23+
+    Infix : p-q         prefix: -pq                 Postfix: pq-
+    Infix : a+b*c       Prefix: +a*bc               Postfix: abc*+
+
+    a + (b*c) => a + (*bc) => +a *(bc) => +a*bc   ---> prefix
+    a + (b*c) => a + (bc*) =>  a+(bc*) => abc*+   ---> postfix
+
+    Evaluate to Postfix
+
+    EvaluatePostfix(exp){
+
+        create a stack s
+        for (size_t i = 0; i < length-1; i++)
+        {
+            if exp[i] is operand: 
+                push(exp[i])
+
+            else if exp[i] is operator{
+                op1 => pop()
+                op2 => pop()
+                result <= perform(exp[i]m op1, op2)
+                push(result)
+            }
+        }
+        return top of stack;       
+    }
+
+ 
+

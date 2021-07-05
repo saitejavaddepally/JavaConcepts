@@ -1,0 +1,15 @@
+
+
+STACK ADT
+---------
+
+A list with the restriction that insertion and deletion can be performed only
+from, one end, called the top
+
+1. push (Insertion)
+2. pop  (deletion)
+3. top (returns the element at top of the stack)
+4. IsEmpty() (returns true if stack is empty else false)
+
+All of these time complexities of constant time O(1)
+
