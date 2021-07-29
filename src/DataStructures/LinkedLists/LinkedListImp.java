@@ -1,4 +1,4 @@
-package LinkedLists;
+package DataStructures.LinkedLists;
 
 class Node {
     int data;
@@ -16,8 +16,10 @@ public class LinkedListImp {
 
     void insertAtBeginning(int x){
         Node temp = new Node(x, null);
+        System.out.println("new node address is : " + temp);
         temp.next = head;
         head = temp;
+        System.out.println("head is : " + head);
     }
 
     void insertAtEnd(int x){
@@ -86,8 +88,7 @@ public class LinkedListImp {
 
     public static void main(String[] args) {
         LinkedListImp imp = new LinkedListImp();
-        imp.insertAtEnd(2);
-        imp.insertAtEnd(3);
+        imp.insertAtBeginning(5);
         imp.printAllNodes();
     }
 }

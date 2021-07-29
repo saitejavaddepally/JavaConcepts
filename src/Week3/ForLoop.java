@@ -1,9 +1,5 @@
 package Week3;
 
-
-import java.util.*;
-import java.lang.Math;
-
 public class ForLoop {
 
 //    public

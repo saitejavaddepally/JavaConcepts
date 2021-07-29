@@ -1,14 +1,11 @@
 package Week2;
 
-import Week3.ForLoop;
 
 import java.util.Scanner;
 
 public class Fibonacci {
 
      public int fibonacciRecursive(int n){
-
-         ForLoop loop = new ForLoop();
 
         if(n <= 1){
             return n;

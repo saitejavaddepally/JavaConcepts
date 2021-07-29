@@ -1,0 +1,44 @@
+
+Graph:
+ A graph G is an ordered pair of a set V of vertices 
+ and a set E of edges
+    G = (V, E)
+
+    ordered pair: 
+        (a, b) != (b, a) if a !=b
+    
+    unordered pair: 
+        {a, b} == {b, a} 
+
+
+An edge is uniquely identified by two end points
+    Two types of edges: directed edge (one way) and undirected edge (two ways)
+    directed edge : ordered pair
+    undirected edge : unordered pair 
+
+Two types of graphs, 
+
+    weighted graph : define some weight over the edges, in between the connected nodes.
+    unweighted graph : the weight inbetween the edges is bydefault 1.
+
+
+    |v| ==> No. of vertices
+    |e| ==> No. of edges
+
+Self loop:
+    An edge is called self-loop or self-edge if there is only one vertex
+    Sometimes if edges are depicting some relationship or connection that's possible with 
+    same node as origin and destination.
+
+    Multi-edge: parallel edges to the same node
+        | node 1 | two paralled nodes |node 2|
+    
+Minimum no. of edges in a graph is zero
+
+No. of edges in a directed graph
+    n * (n-1) if directed
+
+Tree : A tree is an undirected graph with no cycles
+
+
+

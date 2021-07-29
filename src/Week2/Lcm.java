@@ -48,7 +48,7 @@ public class Lcm {
         Scanner sc = new Scanner(System.in);
         long a = sc.nextLong();
         long b = sc.nextLong();
-
+        sc.close();
         System.out.println(new Lcm().lcmFast(a,b));
     }
 }

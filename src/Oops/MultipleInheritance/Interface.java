@@ -7,7 +7,7 @@ interface Loan{
 }
 
 interface vehicleLoan{
-    abstract void vehicleLoan();
+
 }
 
 abstract class Bank{
@@ -47,16 +47,11 @@ class SBI extends Bank implements Loan, vehicleLoan{
         System.out.println("I provide loan");
     }
 
-    @Override
-    public void vehicleLoan() {
-        System.out.println("I provide vehicle loan");
-    }
 }
 
 public class Interface {
     public static void main(String[] args) {
         SBI sbi = new SBI();
-        sbi.vehicleLoan();
         sbi.loan();
     }
 }
